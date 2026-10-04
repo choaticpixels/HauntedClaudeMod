@@ -1,0 +1,14 @@
+{
+  "name": "claude-mods",
+  "owner": { "name": "Jason Plimpton" },
+  "metadata": { "description": "Fun and slightly unhinged mods for Claude Code." },
+  "plugins": [
+    {
+      "name": "haunted-repo",
+      "source": "./plugins/haunted-repo",
+      "description": "Deleted files come back as ghosts that whisper their lost code. 🎃",
+      "version": "1.0.0",
+      "category": "fun"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "haunted-repo",
+  "version": "1.0.0",
+  "description": "Delete a file and its ghost haunts your prompt, whispering fragments of its lost code until you restore it. Seances, exorcisms, poltergeists and secrets.",
+  "author": { "name": "Jason Plimpton" },
+  "license": "MIT",
+  "keywords": ["mod", "halloween", "ghost", "fun", "game"],
+  "types": "./types/index.d.ts"
+}
