@@ -9,6 +9,10 @@ Every file Claude deletes comes back as a ghost. It drifts above your prompt and
   “// TODO: write unit tests (never happened)  …from beyond” — sacrifice.js
 ```
 
+![Haunted Repo demo](../../docs/demo.svg)
+
+**→ [Quick Start](../../QUICKSTART.md)**
+
 ## Install
 
 ```
@@ -28,6 +32,7 @@ Every file Claude deletes comes back as a ghost. It drifts above your prompt and
 
 ## Commands
 
+- `/haunt-demo`: summon three demo ghosts and see the haunting right away (no files are touched)
 - `/graveyard`: a pane of ASCII tombstones with dates and epitaphs
 - `/seance [ghost] [question]`: the ghost answers in character, quoting its own code (uses Haiku)
 - `/exorcise [name|all]`: banish a ghost. Some refuse, and bind themselves to your repo ⛓

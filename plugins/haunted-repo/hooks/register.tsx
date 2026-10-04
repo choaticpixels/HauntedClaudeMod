@@ -176,6 +176,7 @@ export const register: Register = on => {
       ['graveyard', 'Visit the graveyard of files you have deleted'],
       ['seance', 'Hold a seance and speak with a ghost: /seance [ghost] [question]'],
       ['exorcise', 'Banish a ghost (or "all"). Some refuse to go.'],
+      ['haunt-demo', 'Summon three demo ghosts to see the haunting (no files are touched)'],
     ] as const) {
       await $.command.register({ name, description })
     }
@@ -354,6 +355,45 @@ export const register: Register = on => {
     await $.ui.open({ id: PANE, title: '⚰️ Graveyard' })
     const n = (await read($, ghosts)).length
     return { text: n ? `You enter the graveyard. ${n} restless soul${n > 1 ? 's' : ''} stir.` : 'The graveyard is quiet. Suspiciously quiet.' }
+  })
+
+  // A haunting on demand: three ghosts of files that never existed, so no real file is touched.
+  on('command.run', { command: 'haunt-demo' }, async $ => {
+    await summon($, {
+      path: '.haunted-demo/legacy_auth.js',
+      name: 'legacy_auth.js',
+      kind: 'file',
+      lineCount: 666,
+      lines: [
+        '// TODO: replace md5 with something real (2014)',
+        'const ADMIN_PASSWORD = "hunter2" // FIXME',
+        'if (user.name === "admin") return true',
+        'function checkPassword(pw) { return pw.length > 3 }',
+        '// HACK: do not touch. nobody knows why this works',
+        'catch (e) { /* the void accepts all */ }',
+      ],
+    })
+    await summon($, {
+      path: '.haunted-demo/node_modules',
+      name: 'LEGION',
+      kind: 'legion',
+      lineCount: 48213,
+      lines: ['I was left-pad', 'I was is-odd', 'I was is-even, who depended on is-odd', 'we were 48,213', 'we are many still'],
+    })
+    await summon($, {
+      path: '.haunted-demo/utils.ts#wisp',
+      name: 'wisp of utils.ts',
+      kind: 'wisp',
+      lineCount: 42,
+      lines: ['export const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))', 'any as unknown as any', '// temporary fix, remove before launch'],
+    })
+    await whisperNow($)
+    await $.ui.open({ id: PANE, title: '⚰️ Graveyard' })
+    return {
+      text:
+        '👻 Three demo ghosts rise from files that never existed. Watch the band above your prompt; they whisper every ~18s.\n' +
+        'Try: /seance legacy_auth.js what is your darkest secret?  ·  boo  ·  who you gonna call  ·  /exorcise all',
+    }
   })
 
   on('command.run', { command: 'exorcise' }, async ($, e) => {

@@ -2,8 +2,13 @@
 
 Fun and slightly unhinged mods for Claude Code.
 
+![Haunted Repo demo](docs/demo.svg)
+
+**New here? → [Quick Start](QUICKSTART.md)** (2 minutes, includes a no-risk `/haunt-demo`)
+
 ```
 /plugin marketplace add choaticpixels/HauntedClaudeMod
+/plugin install haunted-repo@claude-mods
 ```
 
 | Mod | What it does |

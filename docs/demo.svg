@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
+  <title>Haunted Repo demo: a deleted file returns as a ghost that whispers its lost code</title>
+  <style>
+    .t   { fill: #d4d4d8; }
+    .dim { fill: #71717a; }
+    .acc { fill: #c084fc; }
+    .cy  { fill: #67e8f9; font-style: italic; }
+    .gray{ fill: #a1a1aa; font-style: italic; }
+    .ok  { fill: #4ade80; }
+    .show { opacity: 0; animation: 16s linear infinite; }
+    /* 16s loop: type → run → ghost rises → whispers fade → seance */
+    .a1 { animation-name: a1; } @keyframes a1 { 0%,2%{opacity:0} 4%,100%{opacity:1} }
+    .a2 { animation-name: a2; } @keyframes a2 { 0%,10%{opacity:0} 12%,100%{opacity:1} }
+    .a3 { animation-name: a3; } @keyframes a3 { 0%,14%{opacity:0} 16%,34%{opacity:1} 37%,100%{opacity:0} }
+    .a4 { animation-name: a4; } @keyframes a4 { 0%,16%{opacity:0} 19%,100%{opacity:1} }
+    .w1 { animation-name: w1; } @keyframes w1 { 0%,22%{opacity:0} 25%,42%{opacity:1} 45%,100%{opacity:0} }
+    .w2 { animation-name: w2; } @keyframes w2 { 0%,45%{opacity:0} 48%,62%{opacity:1} 65%,100%{opacity:0} }
+    .w3 { animation-name: w3; } @keyframes w3 { 0%,65%{opacity:0} 68%,96%{opacity:.75} 99%,100%{opacity:0} }
+    .s1 { animation-name: s1; } @keyframes s1 { 0%,70%{opacity:0} 72%,100%{opacity:1} }
+    .s2 { animation-name: s2; } @keyframes s2 { 0%,76%{opacity:0} 79%,100%{opacity:1} }
+    .typing { animation: type 16s steps(20) infinite; }
+    @keyframes type { 0%{clip-path: inset(0 100% 0 0)} 8%,100%{clip-path: inset(0 0 0 0)} }
+    .ghost { animation: drift 7s ease-in-out infinite alternate, a4 16s linear infinite; opacity: 0; }
+    @keyframes drift { 0%{transform: translate(0px, 0px)} 25%{transform: translate(150px,-4px)} 50%{transform: translate(310px,2px)} 75%{transform: translate(200px,-3px)} 100%{transform: translate(460px,0px)} }
+    .ghost2 { animation: drift2 9s ease-in-out infinite alternate, a4 16s linear infinite; opacity: 0; }
+    @keyframes drift2 { 0%{transform: translate(420px, 0px)} 50%{transform: translate(90px,-3px)} 100%{transform: translate(300px,2px)} }
+  </style>
+
+  <!-- window -->
+  <rect x="0" y="0" width="820" height="420" rx="12" fill="#0b0b10"/>
+  <rect x="0" y="0" width="820" height="34" rx="12" fill="#18181b"/>
+  <rect x="0" y="22" width="820" height="12" fill="#18181b"/>
+  <circle cx="20" cy="17" r="6" fill="#ef4444"/><circle cx="40" cy="17" r="6" fill="#eab308"/><circle cx="60" cy="17" r="6" fill="#22c55e"/>
+  <text x="410" y="22" text-anchor="middle" class="dim">claude — haunted-repo</text>
+
+  <!-- transcript -->
+  <text x="24" y="70" class="acc">&gt;</text>
+  <text x="42" y="70" class="t typing">delete sacrifice.js</text>
+
+  <g class="show a1"><text x="24" y="104" class="ok">⏺</text><text x="44" y="104" class="t">Bash(rm sacrifice.js)</text></g>
+  <g class="show a2"><text x="44" y="126" class="dim">⎿ (no output)</text></g>
+  <g class="show a2"><text x="24" y="156" class="t">Deleted sacrifice.js.</text></g>
+
+  <!-- toast -->
+  <g class="show a3">
+    <rect x="420" y="52" width="380" height="30" rx="6" fill="#27272a" stroke="#3f3f46"/>
+    <text x="434" y="72" class="t" font-size="13">👻 sacrifice.js died with unfinished business</text>
+  </g>
+
+  <!-- seance -->
+  <g class="show s1">
+    <text x="24" y="196" class="acc">&gt;</text>
+    <text x="42" y="196" class="t">/seance sacrifice.js how did you die?</text>
+  </g>
+  <g class="show s2">
+    <text x="24" y="226" class="t">🕯️ The candles flicker. The ghost of sacrifice.js speaks:</text>
+    <text x="24" y="252" class="gray">"You called summonDarkness()… with a number… not an array…</text>
+    <text x="24" y="274" class="gray"> and my TODO… 'write unit tests'… never happened… nobody</text>
+    <text x="24" y="296" class="gray"> knows why I worked… and now… neither will you…"</text>
+  </g>
+
+  <!-- band above the prompt -->
+  <line x1="16" x2="804" y1="330" y2="330" stroke="#27272a"/>
+  <g class="ghost"><text x="24" y="356" font-size="18">👻</text></g>
+  <g class="ghost2"><text x="24" y="356" font-size="16">∿</text></g>
+  <g class="show a4"><text x="690" y="356" class="dim">⚰ 1</text></g>
+  <g class="show w1"><text x="34" y="380" class="cy">“// TODO: write unit tests (never happened)  …from beyond” — sacrifice.js</text></g>
+  <g class="show w2"><text x="34" y="380" class="cy">“if (candles &lt; 13) throw new Error('not enough candles')” — sacrifice.js</text></g>
+  <g class="show w3"><text x="34" y="380" class="gray">“r·tu·n sp·r··s.f·lt·r(s =&gt; ·.isFr··n·ly)” — sacrifice.js</text></g>
+
+  <!-- prompt -->
+  <rect x="16" y="392" width="788" height="20" rx="4" fill="#111117" stroke="#27272a"/>
+  <text x="26" y="406" class="acc" font-size="12">&gt;</text>
+</svg>
