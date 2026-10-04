@@ -3,7 +3,7 @@
 Fun and slightly unhinged mods for Claude Code.
 
 ```
-/plugin marketplace add choaticpixels/claude-mods
+/plugin marketplace add choaticpixels/HauntedClaudeMod
 ```
 
 | Mod | What it does |

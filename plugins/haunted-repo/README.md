@@ -12,7 +12,7 @@ Every file Claude deletes comes back as a ghost. It drifts above your prompt and
 ## Install
 
 ```
-/plugin marketplace add choaticpixels/claude-mods
+/plugin marketplace add choaticpixels/HauntedClaudeMod
 /plugin install haunted-repo@claude-mods
 ```
 
