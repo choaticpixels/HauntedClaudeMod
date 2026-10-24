@@ -1,7 +1,11 @@
 {
   "name": "claude-mods",
-  "owner": { "name": "Jason Plimpton" },
-  "metadata": { "description": "Fun and slightly unhinged mods for Claude Code." },
+  "owner": {
+    "name": "Jason Plimpton"
+  },
+  "metadata": {
+    "description": "Fun and slightly unhinged mods for Claude Code."
+  },
   "plugins": [
     {
       "name": "haunted-repo",
@@ -9,6 +13,20 @@
       "description": "Deleted files come back as ghosts that whisper their lost code. 🎃",
       "version": "1.0.0",
       "category": "fun"
+    },
+    {
+      "name": "commit-guard",
+      "source": "./plugins/commit-guard",
+      "description": "Blocks git commit/push when the change holds secrets, keys, .env files or giant files.",
+      "version": "1.0.0",
+      "category": "safety"
+    },
+    {
+      "name": "stuck-detector",
+      "source": "./plugins/stuck-detector",
+      "description": "Detects retry loops, nudges Claude to change approach, and blocks runaway repeats.",
+      "version": "1.0.0",
+      "category": "productivity"
     }
   ]
 }

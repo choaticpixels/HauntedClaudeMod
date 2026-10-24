@@ -1,0 +1,9 @@
+{
+  "name": "commit-guard",
+  "version": "1.0.0",
+  "description": "Blocks git commit and git push when the change contains secrets, private keys, .env files, node_modules or giant files, before they leave your machine.",
+  "author": { "name": "Jason Plimpton" },
+  "license": "MIT",
+  "keywords": ["mod", "security", "git", "secrets", "safety"],
+  "types": "./types/index.d.ts"
+}
